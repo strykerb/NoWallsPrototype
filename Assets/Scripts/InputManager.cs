@@ -6,15 +6,19 @@ public class InputManager : MonoBehaviour
 {
     [SerializeField] Movement movement;
     [SerializeField] MouseLook mouseLook;
-    
+
     PlayerControls controls;
     PlayerControls.GroundMovementActions groundMovement;
+    EnvironmentManager environment;
 
     Vector2 horizontalInput;
     Vector2 mouseInput;
 
     private void Awake()
     {
+        // Find environment in scene
+        environment = FindObjectOfType<EnvironmentManager>();
+
         // Initialize and setup the Input System
         controls = new PlayerControls();
         groundMovement = controls.GroundMovement;
@@ -24,6 +28,7 @@ public class InputManager : MonoBehaviour
         // _ is a throw-away variable since there's no direction/strength of jump
         groundMovement.Jump.performed += _ => movement.OnJumpPressed();
 
+        groundMovement.WallShift.performed += _ => mouseLook.ShiftGaze();
         groundMovement.MouseX.performed += ctx => mouseInput.x = ctx.ReadValue<float>();
         groundMovement.MouseY.performed += ctx => mouseInput.y = ctx.ReadValue<float>();
     }
