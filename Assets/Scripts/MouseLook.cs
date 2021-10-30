@@ -40,14 +40,6 @@ public class MouseLook : MonoBehaviour
         playerCamera.eulerAngles = targetRotation;
     }
 
-    void SnapCamera(Transform goalPoint)
-    {
-        //.eulerAngles = new Vector3(90f, 0f, 0f);
-        transform.LookAt(goalPoint);
-        transform.eulerAngles = new Vector3(0f, transform.eulerAngles.y, 0f);
-        playerCamera.LookAt(goalPoint);
-        playerCamera.eulerAngles = new Vector3(playerCamera.eulerAngles.x, 0f, 0f); //aaa
-    }
 
     private void Start()
     {
@@ -58,28 +50,7 @@ public class MouseLook : MonoBehaviour
     public void ShiftGaze()
     {
         
-        Debug.Log("previous X-rot: " + playerCamera.eulerAngles.x);
         xRotation += 90;
-        /*
-        float newRotX = playerCamera.eulerAngles.x + 90;
-        //newRotX = Mathf.Clamp(newRotX, -xClamp, xClamp);
-        Vector3 targetRotation = transform.eulerAngles;
-        targetRotation.x = newRotX;
-        playerCamera.eulerAngles = targetRotation;
-        Debug.Log("current X-rot: " + playerCamera.eulerAngles.x);
-        */
         environment.Shift();
-
-        /*
-        int layerMask = 1 << 6;
-        RaycastHit hit;
-        // Does the ray intersect any objects excluding the player layer
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, layerMask))
-        {
-            Transform newLookCoordinate = environment.CalculateNewGaze(hit.point);
-            SnapCamera(newLookCoordinate);
-            //GameObject hitPoint = Instantiate(GameObject.CreatePrimitive(PrimitiveType.Sphere), hit.point, Quaternion.identity);
-            //Debug.Log(hit.point);
-        }*/
     }
 }

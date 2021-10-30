@@ -18,29 +18,36 @@ public class EnvironmentManager : MonoBehaviour
         {
             Debug.Log("Case B");
             targetPosition = new Vector3(player.position.y, -player.position.x, player.position.z);
+            //newRotation = new Vector3(-transform.eulerAngles.x, 0f, -90f);
             newRotation = new Vector3(0f, 0f, -90f);
         }
         else if (rot >= 135f && rot < 225f)
         {
             Debug.Log("Case C");
             targetPosition = new Vector3(player.position.x, player.position.z, -player.position.y);
+            //newRotation = new Vector3(-90f, 0f, -transform.eulerAngles.z);
             newRotation = new Vector3(-90f, 0f, 0f);
         } 
         else if (rot >= 225f && rot < 315f) 
         {
             Debug.Log("Case D");
             targetPosition = new Vector3(-player.position.y, player.position.x, player.position.z);
+            //newRotation = new Vector3(-transform.eulerAngles.x, 0f, 90f);
             newRotation = new Vector3(0f, 0f, 90f);
         } 
         else
         {
             Debug.Log("Case A");
             targetPosition = new Vector3(player.position.x, -player.position.z, player.position.y);
+            //newRotation = new Vector3(90f, 0f, -transform.eulerAngles.z);
             newRotation = new Vector3(90f, 0f, 0f);
         }
 
         // Apply specified transformations to player and environment
+        
+        Debug.Log("prev rot: " + transform.eulerAngles + " , new rot: " + newRotation);
         transform.Rotate(newRotation);
+        //transform.eulerAngles += newRotation;
         player.position = targetPosition;
     }
 
