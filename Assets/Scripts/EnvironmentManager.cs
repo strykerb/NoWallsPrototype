@@ -27,7 +27,7 @@ public class EnvironmentManager : MonoBehaviour
             targetPosition = new Vector3(player.position.x, player.position.z, -player.position.y);
             //newRotation = new Vector3(-90f, 0f, -transform.eulerAngles.z);
             newRotation = new Vector3(-90f, 0f, 0f);
-        } 
+        }
         else if (rot >= 225f && rot < 315f) 
         {
             Debug.Log("Case D");

@@ -31,6 +31,7 @@ public class InputManager : MonoBehaviour
         groundMovement.WallShift.performed += _ => mouseLook.ShiftGaze();
         groundMovement.MouseX.performed += ctx => mouseInput.x = ctx.ReadValue<float>();
         groundMovement.MouseY.performed += ctx => mouseInput.y = ctx.ReadValue<float>();
+
     }
 
     void Update()
@@ -42,10 +43,12 @@ public class InputManager : MonoBehaviour
     private void OnEnable()
     {
         controls.Enable();
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void OnDisable()
     {
         controls.Disable();
+        Cursor.lockState = CursorLockMode.None;
     }
 }
