@@ -28,7 +28,7 @@ public class InputManager : MonoBehaviour
         // _ is a throw-away variable since there's no direction/strength of jump
         groundMovement.Jump.performed += _ => movement.OnJumpPressed();
 
-        groundMovement.WallShift.performed += _ => mouseLook.ShiftGaze();
+        groundMovement.WallShift.performed += _ => mouseLook.ShiftGaze(movement.isGrounded);
         groundMovement.MouseX.performed += ctx => mouseInput.x = ctx.ReadValue<float>();
         groundMovement.MouseY.performed += ctx => mouseInput.y = ctx.ReadValue<float>();
 

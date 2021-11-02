@@ -14,7 +14,7 @@ public class Movement : MonoBehaviour
     Vector3 horizontalVelocity = Vector3.zero;
     Vector3 verticalVelocity = Vector3.zero;
 
-    bool isGrounded;
+    public bool isGrounded;
     bool jump;
     
     // Start is called before the first frame update
@@ -35,7 +35,7 @@ public class Movement : MonoBehaviour
         verticalVelocity.y -= gravityStrength * Time.deltaTime;
 
         // checks for collision with ground, resets vertical velocity
-        isGrounded = Physics.CheckSphere(transform.position, 0.1f, groundMask);
+        isGrounded = Physics.CheckSphere(transform.position - Vector3.up/2, 0.1f, groundMask);
         if (isGrounded) { verticalVelocity.y = 0; }
 
         // Set jump velocity if jump is detected

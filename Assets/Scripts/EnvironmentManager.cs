@@ -45,9 +45,10 @@ public class EnvironmentManager : MonoBehaviour
 
         // Apply specified transformations to player and environment
         
-        Debug.Log("prev rot: " + transform.eulerAngles + " , new rot: " + newRotation);
-        transform.Rotate(newRotation);
-        //transform.eulerAngles += newRotation;
+        Debug.Log("prev rot: " + transform.eulerAngles);
+        //transform.Rotate(transform.eulerAngles + newRotation);
+        transform.eulerAngles += newRotation;
+        Debug.Log("new rot: " + transform.eulerAngles);
         player.position = targetPosition;
     }
 

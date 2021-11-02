@@ -47,9 +47,12 @@ public class MouseLook : MonoBehaviour
         environment = FindObjectOfType<EnvironmentManager>();
     }
 
-    public void ShiftGaze()
+    public void ShiftGaze(bool grounded)
     {
-        
+        if (!grounded)
+        {
+            return;
+        }
         xRotation += 90;
         environment.Shift();
     }

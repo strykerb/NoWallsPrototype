@@ -440,6 +440,7 @@ MonoBehaviour:
   speed: 10
   gravityStrength: 30
   jumpHeight: 3.5
+  isGrounded: 0
 --- !u!54 &7661807898064762226
 Rigidbody:
   m_ObjectHideFlags: 0
