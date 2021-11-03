@@ -9,9 +9,11 @@ public class MouseLook : MonoBehaviour
     [SerializeField] float sensitivityY;
     [SerializeField] Transform playerCamera;
     [SerializeField] float xClamp = 85f;
+    [SerializeField] float zCorrectionSpeed = 1;
 
     float mouseX, mouseY;
     float xRotation = 0f;
+    float zRotation = 0f;
 
     Vector3 RotationMask;
 
@@ -37,9 +39,10 @@ public class MouseLook : MonoBehaviour
         xRotation = Mathf.Clamp(xRotation, -xClamp, xClamp);
         targetRotation = transform.eulerAngles;
         targetRotation.x = xRotation;
+        
+        targetRotation.z = zRotation;
         playerCamera.eulerAngles = targetRotation;
     }
-
 
     private void Start()
     {
@@ -49,11 +52,65 @@ public class MouseLook : MonoBehaviour
 
     public void ShiftGaze(bool grounded)
     {
-        if (!grounded)
+        // Don't shift environment if player is looking down or is mid-air
+        if (!grounded || playerCamera.eulerAngles.x <= 0)
         {
             return;
         }
         xRotation += 90;
-        environment.Shift();
+        
+        float rot = transform.eulerAngles.y;
+        Vector3 targetPosition = Vector3.zero;
+        if (rot >= 45f && rot < 135f)
+        {
+            Debug.Log("Case B");
+            targetPosition = new Vector3(transform.position.y, -transform.position.x, transform.position.z);
+            //newRotation = new Vector3(-transform.eulerAngles.x, 0f, -90f);
+            environment.Shift(new Vector3(0f, 0f, -90f));
+            zRotation = -(90 - transform.eulerAngles.y);
+        }
+        else if (rot >= 135f && rot < 225f)
+        {
+            Debug.Log("Case C");
+            targetPosition = new Vector3(transform.position.x, transform.position.z, -transform.position.y);
+            //newRotation = new Vector3(-90f, 0f, -transform.eulerAngles.z);
+            environment.Shift(new Vector3(-90f, 0f, 0f));
+            zRotation = -(180 - transform.eulerAngles.y);
+        }
+        else if (rot >= 225f && rot < 315f)
+        {
+            Debug.Log("Case D");
+            targetPosition = new Vector3(-transform.position.y, transform.position.x, transform.position.z);
+            //newRotation = new Vector3(-transform.eulerAngles.x, 0f, 90f);
+            environment.Shift(new Vector3(0f, 0f, 90f));
+            zRotation = -(270-transform.eulerAngles.y);
+        }
+        else
+        {
+            Debug.Log("Case A");
+            targetPosition = new Vector3(transform.position.x, -transform.position.z, transform.position.y);
+            //newRotation = new Vector3(90f, 0f, -transform.eulerAngles.z);
+            environment.Shift(new Vector3(90f, 0f, 0f));
+            zRotation = transform.eulerAngles.y;
+        }
+        transform.position = targetPosition;
+        StartCoroutine("CorrectZRotation");
+    }
+
+    IEnumerator CorrectZRotation()
+    {
+        do
+        {
+            yield return new WaitForSeconds(0.01f);
+            if (zRotation > 0)
+            {
+                zRotation = Mathf.Max(0f, zRotation - zCorrectionSpeed);
+            }
+            else if (zRotation < 0)
+            {
+                zRotation = Mathf.Min(0f, zRotation + zCorrectionSpeed);
+            }
+        } while (zRotation != 0);
+        yield return true;
     }
 }
