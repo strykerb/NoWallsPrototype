@@ -102,14 +102,7 @@ public class MouseLook : MonoBehaviour
         do
         {
             yield return new WaitForSeconds(0.01f);
-            if (zRotation > 0)
-            {
-                zRotation = Mathf.Max(0f, zRotation - zCorrectionSpeed);
-            }
-            else if (zRotation < 0)
-            {
-                zRotation = Mathf.Min(0f, zRotation + zCorrectionSpeed);
-            }
+            zRotation = Mathf.LerpAngle(zRotation, 0f, zCorrectionSpeed);
         } while (zRotation != 0);
         yield return true;
     }
