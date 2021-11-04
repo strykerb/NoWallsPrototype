@@ -178,6 +178,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Environment
       objectReference: {fileID: 0}
+    - target: {fileID: 7615339679045594684, guid: e7252ca8d8f07ac418adb0a79d9adf6f, type: 3}
+      propertyPath: m_DrawHalo
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7615339679045594684, guid: e7252ca8d8f07ac418adb0a79d9adf6f, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7252ca8d8f07ac418adb0a79d9adf6f, type: 3}
 --- !u!1001 &8034816263138278935
@@ -189,7 +197,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3359609737792489605, guid: 7bad6a7548c762b4eac2918d597d5462, type: 3}
       propertyPath: zCorrectionSpeed
-      value: 0.1
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 8034816264482266401, guid: 7bad6a7548c762b4eac2918d597d5462, type: 3}
       propertyPath: m_RootOrder

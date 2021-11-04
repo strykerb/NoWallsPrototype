@@ -10,7 +10,8 @@ public class EnvironmentManager : MonoBehaviour
     public void Shift(Vector3 newRotation)
     {
         // Determine which wall becomes the floor based on player rotation
-        transform.Rotate(newRotation);
+        //transform.Rotate(newRotation);
+        transform.eulerAngles = newRotation;
     }
 
 

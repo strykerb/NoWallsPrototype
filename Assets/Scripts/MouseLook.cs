@@ -58,43 +58,121 @@ public class MouseLook : MonoBehaviour
             return;
         }
         xRotation += 90;
+
+        Vector3 currEnvRot = environment.transform.eulerAngles;
+        float rot = transform.eulerAngles.y + currEnvRot.y;
         
-        float rot = transform.eulerAngles.y;
         Vector3 targetPosition = Vector3.zero;
+        Vector3 newRotation = currEnvRot;
         if (rot >= 45f && rot < 135f)
         {
             Debug.Log("Case B");
             targetPosition = new Vector3(transform.position.y, -transform.position.x, transform.position.z);
-            //newRotation = new Vector3(-transform.eulerAngles.x, 0f, -90f);
-            environment.Shift(new Vector3(0f, 0f, -90f));
+            
+            if (currEnvRot.x == 90)
+            {
+                Debug.Log("Edge Case");
+                newRotation.x -= currEnvRot.x;
+                newRotation.y -= currEnvRot.x;
+                newRotation.z -= currEnvRot.x;
+            } 
+            else
+            {
+                newRotation.z -= 90f;
+            }
             zRotation = -(90 - transform.eulerAngles.y);
         }
         else if (rot >= 135f && rot < 225f)
         {
             Debug.Log("Case C");
             targetPosition = new Vector3(transform.position.x, transform.position.z, -transform.position.y);
-            //newRotation = new Vector3(-90f, 0f, -transform.eulerAngles.z);
-            environment.Shift(new Vector3(-90f, 0f, 0f));
+            
+            if (currEnvRot.y == 180)
+            {
+                newRotation.x = 90;
+            }
+            else
+            {
+                newRotation.x -= 90;
+            }
             zRotation = -(180 - transform.eulerAngles.y);
         }
         else if (rot >= 225f && rot < 315f)
         {
             Debug.Log("Case D");
             targetPosition = new Vector3(-transform.position.y, transform.position.x, transform.position.z);
-            //newRotation = new Vector3(-transform.eulerAngles.x, 0f, 90f);
-            environment.Shift(new Vector3(0f, 0f, 90f));
+            if (currEnvRot.x == 90)
+            {
+                Debug.Log("Edge Case");
+                newRotation.y -= currEnvRot.x;
+                newRotation.x -= currEnvRot.x;
+            }
+            else
+            {
+                newRotation.z += 90;
+            }
             zRotation = -(270-transform.eulerAngles.y);
         }
         else
         {
             Debug.Log("Case A");
             targetPosition = new Vector3(transform.position.x, -transform.position.z, transform.position.y);
-            //newRotation = new Vector3(90f, 0f, -transform.eulerAngles.z);
-            environment.Shift(new Vector3(90f, 0f, 0f));
+            if (currEnvRot.y == -90 || currEnvRot.y == 270)
+            {
+                Debug.Log("edge case");
+                newRotation.z -= 90;
+            }
+            else if (currEnvRot.y == 180)
+            {
+                newRotation.x = -90;
+            }
+            else
+            {
+                newRotation.x += 90;
+            }
+            //newRotation = new Vector3(currEnvRot.x + 90, currEnvRot.y, currEnvRot.z);
             zRotation = transform.eulerAngles.y;
         }
+        environment.Shift(newRotation);
         transform.position = targetPosition;
+        if (environment.transform.eulerAngles.y != 0)
+        {
+            ResetYRotation();
+        }
+        Debug.Log("Prev rotation: " + currEnvRot);
+        Debug.Log("New rotation: " + newRotation);
         StartCoroutine("CorrectZRotation");
+    }
+
+    void ResetYRotation()
+    {
+        Debug.Log("Resetting Y: was " + environment.transform.eulerAngles + ", Position was: " + transform.position);
+        float yRotation = environment.transform.eulerAngles.y;
+        Vector3 newPos = transform.position;
+        float yCorrection = 0f;
+        if (yRotation > -95 && yRotation < -85 || yRotation == 270)
+        {
+            newPos.x = transform.position.z;
+            newPos.z = -transform.position.x;
+            yCorrection = 90f;
+        } 
+        else if (175 < yRotation || yRotation < 5)
+        {
+            newPos.x = -transform.position.x;
+            newPos.z = -transform.position.z;
+            yCorrection = 180f;
+        }
+        else if (yRotation < 95 && yRotation > 85 || yRotation == -270)
+        {
+            newPos.x = -transform.position.z;
+            newPos.z = transform.position.x;
+            yCorrection = -90f;
+        }
+        transform.position = newPos;
+        transform.Rotate(new Vector3(0, yCorrection, 0));
+        environment.transform.eulerAngles = new Vector3(environment.transform.eulerAngles.x, 0, environment.transform.eulerAngles.z);
+        Debug.Log("Correction: " + yCorrection + ", Rotation Now: " + environment.transform.eulerAngles + ", Position now: " + transform.position);
+        //player.transform.RotateAround(player.transform.position, Vector3.Cross(player.transform.up, hit.transform.up), 90f);
     }
 
     IEnumerator CorrectZRotation()
