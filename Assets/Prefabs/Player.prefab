@@ -421,6 +421,7 @@ MonoBehaviour:
   sensitivityY: 0.2
   playerCamera: {fileID: 8034816262713004899}
   xClamp: 85
+  zCorrectionSpeed: 0.05
 --- !u!114 &944333372656780475
 MonoBehaviour:
   m_ObjectHideFlags: 0
