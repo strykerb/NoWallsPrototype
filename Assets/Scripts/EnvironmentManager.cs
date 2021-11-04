@@ -14,6 +14,14 @@ public class EnvironmentManager : MonoBehaviour
         transform.eulerAngles = newRotation;
     }
 
+    public void ShiftAxis(Vector3 axis, float amount)
+    {
+        // Determine which wall becomes the floor based on player rotation
+        //transform.Rotate(newRotation);
+        //transform.eulerAngles = newRotation;
+        transform.RotateAround(transform.position, axis, amount);
+    }
+
 
     // Start is called before the first frame update
     void Start()

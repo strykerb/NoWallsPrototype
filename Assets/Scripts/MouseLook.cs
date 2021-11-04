@@ -61,21 +61,36 @@ public class MouseLook : MonoBehaviour
 
         Vector3 currEnvRot = environment.transform.eulerAngles;
         float rot = transform.eulerAngles.y + currEnvRot.y;
-        
+        float rotationAmount = 0f;
+
         Vector3 targetPosition = Vector3.zero;
         Vector3 newRotation = currEnvRot;
+        Vector3 rotationAxis = Vector3.zero;
         if (rot >= 45f && rot < 135f)
         {
             Debug.Log("Case B");
+
+            // Axis Method
+            rotationAxis = new Vector3(0, 0, 1);
+            rotationAmount = -90f;
+
+            // Rotation Vector Method
             targetPosition = new Vector3(transform.position.y, -transform.position.x, transform.position.z);
             
-            if (currEnvRot.x == 90)
+            if (currEnvRot.x < 95 && currEnvRot.x > 85)
             {
                 Debug.Log("Edge Case");
                 newRotation.x -= currEnvRot.x;
                 newRotation.y -= currEnvRot.x;
                 newRotation.z -= currEnvRot.x;
             } 
+            else if (currEnvRot.x > 265 && currEnvRot.x < 275)
+            {
+                Debug.Log("Edge Case");
+                newRotation.x = 0;
+                newRotation.y = 90;
+                newRotation.z = -90;
+            }
             else
             {
                 newRotation.z -= 90f;
@@ -85,6 +100,12 @@ public class MouseLook : MonoBehaviour
         else if (rot >= 135f && rot < 225f)
         {
             Debug.Log("Case C");
+
+            // Axis Method
+            rotationAxis = new Vector3(1, 0, 0);
+            rotationAmount = -90f;
+
+            // Rotation Vector Method
             targetPosition = new Vector3(transform.position.x, transform.position.z, -transform.position.y);
             
             if (currEnvRot.y == 180)
@@ -100,12 +121,26 @@ public class MouseLook : MonoBehaviour
         else if (rot >= 225f && rot < 315f)
         {
             Debug.Log("Case D");
+
+            // Axis Method
+            rotationAxis = new Vector3(0, 0, 1);
+            rotationAmount = 90f;
+
+            // Rotation Vector Method
             targetPosition = new Vector3(-transform.position.y, transform.position.x, transform.position.z);
-            if (currEnvRot.x == 90)
+            if (currEnvRot.x > 85 && currEnvRot.x < 95)
             {
                 Debug.Log("Edge Case");
-                newRotation.y -= currEnvRot.x;
-                newRotation.x -= currEnvRot.x;
+                newRotation.x = 0;
+                newRotation.y = 90;
+                newRotation.z = 90;
+            }
+            else if(currEnvRot.x < 275 && currEnvRot.x > 265)
+            {
+                Debug.Log("Edge Case");
+                newRotation.x = 0;
+                newRotation.y = -90;
+                newRotation.z = 90;
             }
             else
             {
@@ -116,6 +151,12 @@ public class MouseLook : MonoBehaviour
         else
         {
             Debug.Log("Case A");
+
+            // Axis Method
+            rotationAxis = new Vector3(1, 0, 0);
+            rotationAmount = 90f;
+
+            // Rotation Vector Method
             targetPosition = new Vector3(transform.position.x, -transform.position.z, transform.position.y);
             if (currEnvRot.y == -90 || currEnvRot.y == 270)
             {
@@ -133,20 +174,23 @@ public class MouseLook : MonoBehaviour
             //newRotation = new Vector3(currEnvRot.x + 90, currEnvRot.y, currEnvRot.z);
             zRotation = transform.eulerAngles.y;
         }
+        //environment.ShiftAxis(rotationAxis, rotationAmount);
         environment.Shift(newRotation);
         transform.position = targetPosition;
+        
         if (environment.transform.eulerAngles.y != 0)
         {
             ResetYRotation();
         }
-        Debug.Log("Prev rotation: " + currEnvRot);
-        Debug.Log("New rotation: " + newRotation);
+        
+        //Debug.Log("Prev rotation: " + currEnvRot);
+        //Debug.Log("New rotation: " + newRotation);
         StartCoroutine("CorrectZRotation");
     }
 
     void ResetYRotation()
     {
-        Debug.Log("Resetting Y: was " + environment.transform.eulerAngles + ", Position was: " + transform.position);
+        //Debug.Log("Resetting Y: was " + environment.transform.eulerAngles + ", Position was: " + transform.position);
         float yRotation = environment.transform.eulerAngles.y;
         Vector3 newPos = transform.position;
         float yCorrection = 0f;
@@ -171,7 +215,7 @@ public class MouseLook : MonoBehaviour
         transform.position = newPos;
         transform.Rotate(new Vector3(0, yCorrection, 0));
         environment.transform.eulerAngles = new Vector3(environment.transform.eulerAngles.x, 0, environment.transform.eulerAngles.z);
-        Debug.Log("Correction: " + yCorrection + ", Rotation Now: " + environment.transform.eulerAngles + ", Position now: " + transform.position);
+        //Debug.Log("Correction: " + yCorrection + ", Rotation Now: " + environment.transform.eulerAngles + ", Position now: " + transform.position);
         //player.transform.RotateAround(player.transform.position, Vector3.Cross(player.transform.up, hit.transform.up), 90f);
     }
 
