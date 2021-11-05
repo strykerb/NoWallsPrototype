@@ -37,7 +37,7 @@ public class PortalCollider : MonoBehaviour
         if (other.name == "Player") {
             Debug.Log("Player Exited");
             playerIsOverlapping = false;
-            receiver.GetComponent<PortalCollider>().playerJustTeleported = true;playerJustTeleported = false;
+            playerJustTeleported = false;
         }
     }
 }
