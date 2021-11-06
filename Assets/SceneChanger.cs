@@ -8,6 +8,9 @@ public class SceneChanger : MonoBehaviour
 
     public void changeScene() {
         SceneManager.LoadScene("Main", LoadSceneMode.Single);
-        Debug.Log("Hello");
+    }
+
+    public void quit() {
+        Application.Quit();
     }
 }
