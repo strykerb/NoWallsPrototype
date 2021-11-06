@@ -44,10 +44,10 @@ public class Movement : MonoBehaviour
             if (isGrounded)
             {
                 // Modify vertical velocity so that the player's position reaches jumpHeight
-                verticalVelocity.y = Mathf.Sqrt(2 * jumpHeight * gravityStrength);
-                jump = false;
+                body.AddRelativeForce(new Vector3(0, Mathf.Sqrt(2 * jumpHeight * gravityStrength), 0), ForceMode.Impulse);
                 Debug.Log("jump.");
             }
+            jump = false;
         }
 
         // Apply movement
