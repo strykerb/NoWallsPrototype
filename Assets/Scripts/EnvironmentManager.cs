@@ -9,7 +9,7 @@ public class EnvironmentManager : MonoBehaviour
     [SerializeField] GameObject enemyPrefab;
     List<GameObject> enemies;
     int timer = 0;
-    int spawnCap = 0;
+    int spawnCap = 10;
     [SerializeField] int spawnThreshold = 1800;
 
     public void Shift(Vector3 newRotation)
