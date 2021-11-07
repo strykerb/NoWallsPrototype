@@ -8,7 +8,7 @@ public class MoveToPlayer : MonoBehaviour
     public float offset = 2f;           // Offset once object is close to player to prevent collision. 
     public int count;
     int damp = 5;                       // we can change the slerp velocity here
-    [SerializeField] float moveSpeed = 10f;
+    [SerializeField] float moveSpeed = 5f;
 
     private void Start()
     {
@@ -26,7 +26,8 @@ public class MoveToPlayer : MonoBehaviour
         }
 
         var rotationAngle = Quaternion.LookRotation(goal.position - transform.position); // we get the angle has to be rotated
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotationAngle, Time.deltaTime * damp); // we rotate the rotationAngle 
+        //transform.rotation = Quaternion.Slerp(transform.rotation, rotationAngle, Time.deltaTime /** damp*/); // we rotate the rotationAngle
+        transform.rotation = rotationAngle;
         transform.Translate(transform.forward * Time.deltaTime * moveSpeed);
         /*
         if (Vector3.Distance(goal.position, transform.position) >= offset)
