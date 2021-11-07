@@ -9,6 +9,7 @@ public class EnvironmentManager : MonoBehaviour
     [SerializeField] GameObject enemyPrefab;
     List<GameObject> enemies;
     int timer = 0;
+    int spawnCap = 10;
     [SerializeField] int spawnThreshold = 1800;
 
     public void Shift(Vector3 newRotation)
@@ -60,6 +61,7 @@ public class EnvironmentManager : MonoBehaviour
 
     public void SpawnEnemy()
     {
+        if (enemies.Count >= spawnCap) { return; }
         enemies.Add(Instantiate(enemyPrefab, Vector3.zero, Quaternion.identity));
     }
 

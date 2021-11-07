@@ -51,4 +51,10 @@ public class InputManager : MonoBehaviour
         controls.Disable();
         Cursor.lockState = CursorLockMode.None;
     }
+
+    public void DisableControls()
+    {
+        controls.Disable();
+        Cursor.lockState = CursorLockMode.None;
+    }
 }

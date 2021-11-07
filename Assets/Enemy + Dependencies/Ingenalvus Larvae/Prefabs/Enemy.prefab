@@ -569,6 +569,7 @@ GameObject:
   - component: {fileID: 5267808712038132938}
   - component: {fileID: 6631709055693200056}
   - component: {fileID: 8835153780110258664}
+  - component: {fileID: 4096608807009864866}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -625,6 +626,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goal: {fileID: 0}
   offset: 2
+  count: 0
+  moveSpeed: 10
 --- !u!114 &8835153780110258664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -638,6 +641,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offset: 2
+--- !u!135 &4096608807009864866
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5267808712028643180}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5267808712028643182
 GameObject:
   m_ObjectHideFlags: 0

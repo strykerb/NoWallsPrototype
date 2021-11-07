@@ -27,11 +27,21 @@ public class MoveToPlayer : MonoBehaviour
 
         var rotationAngle = Quaternion.LookRotation(goal.position - transform.position); // we get the angle has to be rotated
         transform.rotation = Quaternion.Slerp(transform.rotation, rotationAngle, Time.deltaTime * damp); // we rotate the rotationAngle 
-
+        transform.Translate(transform.forward * Time.deltaTime * moveSpeed);
+        /*
         if (Vector3.Distance(goal.position, transform.position) >= offset)
         {
             //Vector3 direction = goal.position - transform.position;
             transform.Translate(transform.forward * Time.deltaTime * moveSpeed);
+        }*/
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            Debug.Log("kill");
+            other.gameObject.GetComponent<GameOver>().GameOverActivate();
         }
     }
 }

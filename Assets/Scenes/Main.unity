@@ -1089,24 +1089,28 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300006, guid: 8af8fca8ef997834f8bb68048ac7172b, type: 3}
---- !u!1 &1135840035 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8034816264482266403, guid: 7bad6a7548c762b4eac2918d597d5462, type: 3}
+--- !u!114 &1135840036 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1135840036, guid: 7bad6a7548c762b4eac2918d597d5462, type: 3}
   m_PrefabInstance: {fileID: 1583949909}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1135840036
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1135840035}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 22209a5d4eec98448ab975a3423f68f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameOverMenu: {fileID: 315521345}
+--- !u!114 &1135840041 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 181346646497645553, guid: 7bad6a7548c762b4eac2918d597d5462, type: 3}
+  m_PrefabInstance: {fileID: 1583949909}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8423ba13aecc25748af7a2efee9b0033, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1140239829 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1575100136571284934, guid: e7252ca8d8f07ac418adb0a79d9adf6f, type: 3}
@@ -1323,14 +1327,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 944333372656780475, guid: 7bad6a7548c762b4eac2918d597d5462, type: 3}
-      propertyPath: speed
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 7661807898064762226, guid: 7bad6a7548c762b4eac2918d597d5462, type: 3}
-      propertyPath: m_Drag
-      value: 0.4
-      objectReference: {fileID: 0}
+    - target: {fileID: 1135840036, guid: 7bad6a7548c762b4eac2918d597d5462, type: 3}
+      propertyPath: gameOverMenu
+      value: 
+      objectReference: {fileID: 315521345}
+    - target: {fileID: 1135840036, guid: 7bad6a7548c762b4eac2918d597d5462, type: 3}
+      propertyPath: inputManager
+      value: 
+      objectReference: {fileID: 1135840041}
     - target: {fileID: 8034816264482266401, guid: 7bad6a7548c762b4eac2918d597d5462, type: 3}
       propertyPath: m_RootOrder
       value: 0
