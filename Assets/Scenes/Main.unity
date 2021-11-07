@@ -20,11 +20,11 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientSkyColor: {r: 0.5377358, g: 0.5377358, b: 0.5377358, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 0
+  m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
   m_HaloStrength: 0.5
@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: b40fc2e96726bca46abd4da437fd500e, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -288,7 +288,6 @@ GameObject:
   - component: {fileID: 315521348}
   - component: {fileID: 315521347}
   - component: {fileID: 315521346}
-  - component: {fileID: 315521350}
   m_Layer: 5
   m_Name: GameOverCanvas
   m_TagString: Untagged
@@ -379,18 +378,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &315521350
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 315521345}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22209a5d4eec98448ab975a3423f68f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &334799822
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -742,7 +729,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 315521350}
+      - m_Target: {fileID: 1135840036}
         m_TargetAssemblyTypeName: PlayOrMenu, Assembly-CSharp
         m_MethodName: menu
         m_Mode: 1
@@ -886,6 +873,24 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300006, guid: 8af8fca8ef997834f8bb68048ac7172b, type: 3}
+--- !u!1 &1135840035 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8034816264482266403, guid: 7bad6a7548c762b4eac2918d597d5462, type: 3}
+  m_PrefabInstance: {fileID: 1583949909}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1135840036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1135840035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22209a5d4eec98448ab975a3423f68f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameOverMenu: {fileID: 315521345}
 --- !u!1 &1140239829 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1575100136571284934, guid: e7252ca8d8f07ac418adb0a79d9adf6f, type: 3}
@@ -1361,7 +1366,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 315521350}
+      - m_Target: {fileID: 1135840036}
         m_TargetAssemblyTypeName: PlayOrMenu, Assembly-CSharp
         m_MethodName: playAgain
         m_Mode: 1
