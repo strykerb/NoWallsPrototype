@@ -1343,6 +1343,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zRotationOffset: {fileID: 1332323518261517564}
+  enemyPrefab: {fileID: 5267808712028643180, guid: 976e7e759d39145a1a4fe091a0665308, type: 3}
 --- !u!1 &4374715027439255258
 GameObject:
   m_ObjectHideFlags: 0

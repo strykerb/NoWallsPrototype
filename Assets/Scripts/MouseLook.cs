@@ -210,6 +210,7 @@ public class MouseLook : MonoBehaviour
         }
         //environment.ShiftAxis(rotationAxis, rotationAmount);
         environment.Shift(newRotation);
+        environment.ShiftEnemies(direction);
         transform.position = targetPosition;
         
         if (environment.transform.eulerAngles.y != 0)

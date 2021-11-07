@@ -7,6 +7,11 @@ public class MoveToPlayer : MonoBehaviour
     public Transform goal;              // Player Transform.
     public float offset = 2f;           // Offset once object is close to player to prevent collision. 
 
+    private void Start()
+    {
+        goal = FindObjectOfType<InputManager>().transform;
+    }
+
     // Update is called once per frame
     void Update()
     {
