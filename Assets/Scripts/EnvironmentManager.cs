@@ -8,7 +8,9 @@ public class EnvironmentManager : MonoBehaviour
     [SerializeField] Transform zRotationOffset;
     [SerializeField] GameObject enemyPrefab;
     List<GameObject> enemies;
-    
+    int timer = 0;
+    [SerializeField] int spawnThreshold = 1800;
+
     public void Shift(Vector3 newRotation)
     {
         // Determine which wall becomes the floor based on player rotation
@@ -72,6 +74,10 @@ public class EnvironmentManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (timer++ >= spawnThreshold)
+        {
+            timer = 0;
+            SpawnEnemy();
+        }
     }
 }
