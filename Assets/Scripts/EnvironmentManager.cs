@@ -9,7 +9,7 @@ public class EnvironmentManager : MonoBehaviour
     [SerializeField] GameObject enemyPrefab;
     List<GameObject> enemies;
     int timer = 0;
-    int spawnCap = 10;
+    int spawnCap = 0;
     [SerializeField] int spawnThreshold = 1800;
 
     public void Shift(Vector3 newRotation)
@@ -70,7 +70,6 @@ public class EnvironmentManager : MonoBehaviour
     {
         player = FindObjectOfType<InputManager>().transform;
         enemies = new List<GameObject>();
-        SpawnEnemy();
     }
 
     // Update is called once per frame
