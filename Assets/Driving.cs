@@ -6,7 +6,7 @@ public class Driving : MonoBehaviour
 {
     Rigidbody rb;
     [SerializeField] float speed;
-    int threshold = 40;
+    int threshold = 50;
     
     // Start is called before the first frame update
     void Start()
@@ -34,5 +34,6 @@ public class Driving : MonoBehaviour
             loopedPos.z = -transform.position.z;
             transform.position = loopedPos;
         }
+        Debug.Log(transform.position);
     }
 }
