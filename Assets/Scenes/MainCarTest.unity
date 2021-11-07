@@ -949,6 +949,10 @@ PrefabInstance:
       propertyPath: speed
       value: -0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 6525737838060946280, guid: 9c7c61347a4047846999d95d170c609c, type: 3}
+      propertyPath: moveDir.z
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2433546743052356061, guid: 9c7c61347a4047846999d95d170c609c, type: 3}
     - {fileID: 3909768740602084545, guid: 9c7c61347a4047846999d95d170c609c, type: 3}
