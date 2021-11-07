@@ -9,6 +9,8 @@ public class GameOver : MonoBehaviour
     public GameObject gameOverMenu;
 
     void Update() {
+        //change to if playerLost
+            //playerLost being a boolean
         if (Input.GetKeyDown(KeyCode.Escape)) {
             Cursor.lockState = CursorLockMode.None;
             gameOverMenu.SetActive(!gameOverMenu.activeSelf);
