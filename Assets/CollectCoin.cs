@@ -7,6 +7,8 @@ public class CollectCoin : MonoBehaviour
     [SerializeField] AudioSource sound;
     [SerializeField] float respawnTime = 3.0f;
 
+    [SerializeField] float spinSpeed = 0.1f;
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -28,5 +30,9 @@ public class CollectCoin : MonoBehaviour
         GetComponent<MeshRenderer>().enabled = true;
         GetComponent<MeshCollider>().enabled = true;
         // gameObject.SetActive(true);
+    }
+
+    private void Update() {
+        transform.Rotate(0f,0f,spinSpeed * Time.deltaTime, Space.Self);
     }
 }
