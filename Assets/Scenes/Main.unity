@@ -888,6 +888,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 5226967155155413588, guid: e7252ca8d8f07ac418adb0a79d9adf6f, type: 3}
+      propertyPath: m_Volume
+      value: 0.15
+      objectReference: {fileID: 0}
     - target: {fileID: 5628286286755624470, guid: e7252ca8d8f07ac418adb0a79d9adf6f, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.7071068
@@ -3052,6 +3056,10 @@ PrefabInstance:
       propertyPath: gameOverMenu
       value: 
       objectReference: {fileID: 315521345}
+    - target: {fileID: 6551187252860479723, guid: 7bad6a7548c762b4eac2918d597d5462, type: 3}
+      propertyPath: m_Volume
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 8034816264482266401, guid: 7bad6a7548c762b4eac2918d597d5462, type: 3}
       propertyPath: m_RootOrder
       value: 0
