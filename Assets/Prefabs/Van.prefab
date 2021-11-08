@@ -122,7 +122,6 @@ GameObject:
   - component: {fileID: 2681007038254960859}
   - component: {fileID: 882950760424334274}
   - component: {fileID: 6789819176215629573}
-  - component: {fileID: 2109340993835850988}
   m_Layer: 0
   m_Name: car-hippie-van-wheel_FL
   m_TagString: Untagged
@@ -194,20 +193,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &2109340993835850988
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3989073488172319807}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300014, guid: 59c03c82c26dcff4f9695a5d7268cf39, type: 3}
 --- !u!1 &5418932360384420801
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,7 +204,6 @@ GameObject:
   - component: {fileID: 5796427031400549234}
   - component: {fileID: 5273639666777520801}
   - component: {fileID: 6618810492059544705}
-  - component: {fileID: 2492619277817351431}
   m_Layer: 0
   m_Name: car-hippie-van-wheel_FR
   m_TagString: Untagged
@@ -291,20 +275,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &2492619277817351431
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5418932360384420801}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300018, guid: 59c03c82c26dcff4f9695a5d7268cf39, type: 3}
 --- !u!1 &6091927814087501516
 GameObject:
   m_ObjectHideFlags: 0
@@ -316,7 +286,6 @@ GameObject:
   - component: {fileID: 6464155619682249399}
   - component: {fileID: 2236181616558617086}
   - component: {fileID: 8043673249275663778}
-  - component: {fileID: 2533965079123334538}
   m_Layer: 0
   m_Name: car-hippie-van-wheel_BR
   m_TagString: Untagged
@@ -388,20 +357,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &2533965079123334538
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6091927814087501516}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300012, guid: 59c03c82c26dcff4f9695a5d7268cf39, type: 3}
 --- !u!1 &6856435618190723296
 GameObject:
   m_ObjectHideFlags: 0
@@ -413,7 +368,6 @@ GameObject:
   - component: {fileID: 6172918230411147595}
   - component: {fileID: 2837509042553227380}
   - component: {fileID: 4724458455248041655}
-  - component: {fileID: 3223617700813545843}
   m_Layer: 0
   m_Name: car-hippie-van-base
   m_TagString: Untagged
@@ -490,20 +444,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &3223617700813545843
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6856435618190723296}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300010, guid: 59c03c82c26dcff4f9695a5d7268cf39, type: 3}
 --- !u!1 &7555992159060559543
 GameObject:
   m_ObjectHideFlags: 0
@@ -515,7 +455,6 @@ GameObject:
   - component: {fileID: 2214730973340588043}
   - component: {fileID: 136617963494025061}
   - component: {fileID: 2580455326153920256}
-  - component: {fileID: 2958739370530165507}
   m_Layer: 0
   m_Name: car-hippie-van-wheel_BL
   m_TagString: Untagged
@@ -587,17 +526,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &2958739370530165507
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7555992159060559543}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300016, guid: 59c03c82c26dcff4f9695a5d7268cf39, type: 3}

@@ -122,7 +122,6 @@ GameObject:
   - component: {fileID: 3674930298503074232}
   - component: {fileID: 215514924353590065}
   - component: {fileID: 4655554087675397436}
-  - component: {fileID: 2548463285352335130}
   m_Layer: 0
   m_Name: car-police-wheel_FR
   m_TagString: Untagged
@@ -194,20 +193,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &2548463285352335130
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3503613643146484860}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300008, guid: 1ffe94ae768a9a84a8500fc7ecaf2547, type: 3}
 --- !u!1 &4234013350380179669
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,7 +204,6 @@ GameObject:
   - component: {fileID: 242412321047229456}
   - component: {fileID: 1638765559119052845}
   - component: {fileID: 512844934465149703}
-  - component: {fileID: 5295050964934611750}
   m_Layer: 0
   m_Name: car-police-wheel_FL
   m_TagString: Untagged
@@ -291,20 +275,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &5295050964934611750
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4234013350380179669}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300006, guid: 1ffe94ae768a9a84a8500fc7ecaf2547, type: 3}
 --- !u!1 &6657043744112878077
 GameObject:
   m_ObjectHideFlags: 0
@@ -316,7 +286,6 @@ GameObject:
   - component: {fileID: 318714924309464274}
   - component: {fileID: 3471891966929663720}
   - component: {fileID: 4447850019387965751}
-  - component: {fileID: 2784564320387238133}
   m_Layer: 0
   m_Name: car-police-base
   m_TagString: Untagged
@@ -394,20 +363,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &2784564320387238133
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6657043744112878077}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 1ffe94ae768a9a84a8500fc7ecaf2547, type: 3}
 --- !u!1 &7683791346662339219
 GameObject:
   m_ObjectHideFlags: 0
@@ -419,7 +374,6 @@ GameObject:
   - component: {fileID: 3374936264011480367}
   - component: {fileID: 6582671365839534761}
   - component: {fileID: 989812602293785676}
-  - component: {fileID: 4646309958818573726}
   m_Layer: 0
   m_Name: car-police-wheel_BR
   m_TagString: Untagged
@@ -491,20 +445,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &4646309958818573726
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7683791346662339219}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300004, guid: 1ffe94ae768a9a84a8500fc7ecaf2547, type: 3}
 --- !u!1 &8116455671772256884
 GameObject:
   m_ObjectHideFlags: 0
@@ -516,7 +456,6 @@ GameObject:
   - component: {fileID: 4541617269023607010}
   - component: {fileID: 1345941527481120171}
   - component: {fileID: 3383146607243918670}
-  - component: {fileID: 6660858734193570226}
   m_Layer: 0
   m_Name: car-police-wheel_BL
   m_TagString: Untagged
@@ -588,17 +527,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &6660858734193570226
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8116455671772256884}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300002, guid: 1ffe94ae768a9a84a8500fc7ecaf2547, type: 3}
