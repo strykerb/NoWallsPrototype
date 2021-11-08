@@ -4,10 +4,7 @@ using UnityEngine;
 
 public class Driving : MonoBehaviour
 {
-    [SerializeField] float speed;
     [SerializeField] Vector3 moveDir;
-    [SerializeField] bool xPositive;
-    [SerializeField] bool yPositive;
     int threshold = 50;
     Vector3 direction;
 
@@ -21,7 +18,7 @@ public class Driving : MonoBehaviour
     void Update()
     {
         
-        transform.Translate(moveDir * speed);
+        transform.Translate(moveDir);
         Vector3 loopedPos = transform.position;
         if (Mathf.Abs(transform.position.x) > threshold)
         {
