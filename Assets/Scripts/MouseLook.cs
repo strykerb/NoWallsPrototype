@@ -53,7 +53,7 @@ public class MouseLook : MonoBehaviour
     public void ShiftGaze(bool grounded)
     {
         // Don't shift environment if player is looking down or is mid-air
-        if (!grounded || playerCamera.eulerAngles.x <= 0)
+        if (playerCamera.eulerAngles.x <= 0)
         {
             return;
         }
@@ -210,6 +210,7 @@ public class MouseLook : MonoBehaviour
         }
         //environment.ShiftAxis(rotationAxis, rotationAmount);
         environment.Shift(newRotation);
+        environment.ShiftEnemies(direction);
         transform.position = targetPosition;
         
         if (environment.transform.eulerAngles.y != 0)

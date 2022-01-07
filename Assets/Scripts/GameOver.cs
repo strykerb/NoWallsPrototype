@@ -5,16 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour
 {
-
+    [SerializeField] InputManager inputManager;
     public GameObject gameOverMenu;
 
     void Update() {
         //change to if playerLost
             //playerLost being a boolean
         if (Input.GetKeyDown(KeyCode.Escape)) {
-            Cursor.lockState = CursorLockMode.None;
-            gameOverMenu.SetActive(!gameOverMenu.activeSelf);
+            GameOverActivate();
         }
+    }
+
+    public void GameOverActivate()
+    {
+        inputManager.DisableControls();
+        gameOverMenu.SetActive(true);
     }
 
     public void playAgain() 
